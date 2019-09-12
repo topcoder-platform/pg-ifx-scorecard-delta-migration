@@ -2,7 +2,7 @@
 
 ## Prerequisites
 1. Node.js >= v10.14.2
-2. A local copy of [informix-postgres-migrator](https://github.com/topcoder-platform/informix-postgres-migrator)
+2. Earlier challenge Details: https://github.com/topcoder-platform/informix-postgres-migrator/tree/master/pg_delta_folder
 
 ## Setup
 There are 4 main components to setup. You can follow the instructions for each component to set them up.
@@ -10,9 +10,6 @@ There are 4 main components to setup. You can follow the instructions for each c
 ### Postgres setup
 1. Download and install postgres if you don't have it already. You can check the [download page](https://www.postgresql.org/download/) and get the one for your OS.
 
-2. Start the postgres server. On Mac, I execute command `pg_ctl -D /usr/local/var/postgres start` to start the server for a homebrew installation. You can check the relevant command for your OS in the [docs](https://www.postgresql.org/docs/8.2/server-start.html)
-
-3. Login to postgres. On Mac, I execute command, `psql -U <my_user_name> -d postgres`. If you don't have a user already setup, you can check this [SO question](https://stackoverflow.com/questions/2172569/how-do-i-login-and-authenticate-to-postgresql-after-a-fresh-install) to create one.
 
 4. Modify [01_tcs_catalog_main_schema.sql](https://github.com/topcoder-platform/informix-postgres-migrator/blob/master/tc-database-scripts/tcs_catalog/01_tcs_catalog_main_schema.sql) in `informix-postgres-migrator/tc-database-scripts/tcs_catalog` to fit your username.
 Change the first few lines to,
@@ -32,7 +29,7 @@ Change the first few lines to,
 ```
 
 5. Execute all [three sql scripts](https://github.com/topcoder-platform/informix-postgres-migrator/tree/master/tc-database-scripts/tcs_catalog) in order, one after another.
-On Mac, I execute using command,
+On Mac, execute using command,
 `postgres=# \i <path_to_sql_file>`
 
 6. Execute the [trigger setup sql](https://github.com/topcoder-platform/informix-postgres-migrator/blob/master/pg_delta_folder/scorecard_example_trigger_function.sql) in `informix-postgres-migrator/pg_delta_folder`
@@ -128,14 +125,10 @@ So it is beyond our control.
 2. You might see trace messages posted from dependency module `informix-wrapper` such as
 ```
 Trace: Initializing for url jdbc:informix-sqli://localhost:2021/tcs_catalog:INFORMIXSERVER=informixoltp_tcp;INFORMIXCONRETRY=1;INFORMIXCONTIME=30;
-    at JDBCConn.initialize (/Users/mayur/Desktop/postgres_informix_updater/node_modules/informix-wrapper/lib/jdbc-wrapper.js:85:21)
-    at createConnection (/Users/mayur/Desktop/postgres_informix_updater/src/common/informixWrapper.js:31:15)
-    at Promise (/Users/mayur/Desktop/postgres_informix_updater/src/common/informixWrapper.js:44:24)
-    at new Promise (<anonymous>)
-    at Object.executeQuery (/Users/mayur/Desktop/postgres_informix_updater/src/common/informixWrapper.js:42:10)
-    at updateInformix (/Users/mayur/Desktop/postgres_informix_updater/src/consumer.js:60:33)
-    at Object.dataHandler (/Users/mayur/Desktop/postgres_informix_updater/src/consumer.js:77:13)
-    at Object.tryCatcher (/Users/mayur/Desktop/postgres_informix_updater/node_modules/bluebird/js/release/util.js:16:23)
+    at JDBCConn.initialize (/Users/Desktop/postgres_informix_updater/node_modules/informix-wrapper/lib/jdbc-wrapper.js:85:21)
+    at createConnection (/Users/Desktop/postgres_informix_updater/src/common/informixWrapper.js:31:15)
+    at Promise (/Users/Desktop/postgres_informix_updater/src/common/informixWrapper.js:44:24)
+Desktop/postgres_informix_updater/node_modules/bluebird/js/release/util.js:16:23)
     at Object.handler (/Users/m
 ```
 These are not errors. Just logs.
