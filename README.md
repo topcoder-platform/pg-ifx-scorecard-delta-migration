@@ -75,8 +75,6 @@ Also, note that the SSL options for kafka are optional. You can leave them set t
 
 You can verify by executing insert/update/delete commands in postgres terminal and check that the informix database is updated.
 
-Please see my unlisted video [here](https://youtu.be/JRDAENZgI1o) for complete demo.
-
 Some sample commands to execute,
 **Insert** : `INSERT INTO tcs_catalog.scorecard(scorecard_id,scorecard_status_id,scorecard_type_id,project_category_id,name,version,min_score,max_score,create_user,create_date,modify_user,modify_date) VALUES (1, 1, 1, 1, 'Default design scorecard', '1.0', 75.0, 100.0, '132456', '2008-11-27 14:14:29.517', '132456', '2008-11-27 14:14:29.517');`
 
