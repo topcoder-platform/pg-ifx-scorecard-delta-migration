@@ -1,0 +1,33 @@
+{
+  "rowOne": {
+    "scorecard_id": 1, 
+    "scorecard_status_id": 2, 
+    "scorecard_type_id": 1, 
+    "project_category_id": 1, 
+    "name": "Current name", 
+    "version": "0.1.0", 
+    "min_score": 75.0, 
+    "max_score": 100.0, 
+    "create_user": "123456", 
+    "create_date": "2018-11-02T20:59:38.000+0530", 
+    "modify_user": "22655028", 
+    "modify_date": "2018-11-02T22:59:38.000+0530", 
+    "version_number": 0
+  },
+  "rowTwo": {
+    "scorecard_id": 2, 
+    "scorecard_status_id": 3, 
+    "scorecard_type_id": 2, 
+    "project_category_id": 3, 
+    "name": "Current name Two", 
+    "version": "0.1.0", 
+    "min_score": 70.0, 
+    "max_score": 100.0, 
+    "create_user": "125456", 
+    "create_date": "2017-11-02T20:59:38.000+0530", 
+    "modify_user": "22855028", 
+    "modify_date": "2017-11-02T22:59:38.000+0530", 
+    "version_number": 0
+  },
+  "updatedName": "New name"
+}
